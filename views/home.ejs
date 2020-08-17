@@ -4,4 +4,11 @@
 
 <p><%= firstHomeContent %></p>
 
+<% console.log(postsArray); %> 
+
+<%postsArray.forEach(function(post){%>
+    <h1><%=post.postTitle%></h1>
+    <p><%=post.postBody.slice(0,100)+" ... "%><a href="/<%=post.postTitle%>" target="_blank">Read More</a></p>
+<%});%>
+
 <%-include("partials/footer")-%>
