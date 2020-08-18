@@ -64,12 +64,12 @@ app.get("/:postName", function(req,res){
   posts.forEach(function(post){
 
     const storedTitle = _.lowerCase(post.postTitle);
-    const storedBody = post.postBody;
+    
 
     if(requestedTitle === storedTitle){
       res.render("post", {
-        title : storedTitle,
-        body : storedBody
+        title : post.postTitle,
+        body : post.postBody
       });
     }
   }) 
